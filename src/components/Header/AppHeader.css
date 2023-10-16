@@ -1,0 +1,40 @@
+.appheader{
+    font-size: 24px;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    color: dimgray;  
+}
+
+.task{
+    /* background-color:rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.button1>button{
+    background-color: royalblue;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+
+}
+
+.button2>select{
+    background-color: rgb(243, 242, 242);
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    outline: none;
+
+}

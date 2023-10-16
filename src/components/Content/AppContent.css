@@ -1,0 +1,22 @@
+.content{
+    width: 45%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: rgb(239, 243, 245);
+}
+
+.content>h2{
+    background-color: rgb(207, 205, 205);
+    padding: 8px;
+    border-radius: 7px;
+    font-size: 17px;
+    color: dimgray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

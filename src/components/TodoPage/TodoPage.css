@@ -1,6 +1,19 @@
-.todoList{
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position:  absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+.todoList {
     background-color: aliceblue;
-    width: 40%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -10,23 +23,25 @@
     margin-top: 30px;
 }
 
-label{
+label {
     font-size: 20px;
-color: dimgray;
-margin: 10px;
-cursor: pointer;
+    color: dimgray;
+    margin: 10px;
+    cursor: pointer;
+
 }
 
-input{
+input {
     font-size: 20px;
     outline: none;
     border: none;
     border-radius: 5px;
     background-color: white;
     padding: 10px;
+    width: 80%;
 }
 
-.list{
+.list {
     background-color: yellow;
     padding: 10px;
     font-size: 20px;
@@ -34,15 +49,16 @@ input{
     background-color: white;
     outline: none;
     border: none;
+    width: 84%;
 }
 
-.button3{
-    padding: 20px;
-   margin-top: 20px;
+.button3 {
+    padding: 10px;
+    margin-top: 20px;
 
 }
 
-.button3>button{
+.button3>button {
     margin: 10px;
     padding: 10px;
     font-size: 19px;
@@ -52,31 +68,35 @@ input{
     cursor: pointer;
 }
 
-.left_button{
+.left_button {
     background-color: dodgerblue;
     color: white;
 }
 
-.right{
+.active_left_button {
+    background-color: rgb(90, 8, 87);
+    color: white;
+}
+
+.right {
     background-color: rgb(208, 207, 207);
 }
 
-.close{
+.close {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 32%;
-    left: 69%;
-    font-size: 20px;
-    background-color: rgb(247, 238, 238);
-    width: 55px;
-    height: 55px;
+    top: 0px;
+    left: 64%;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.close:hover{
-    background-color: red;
+.close:hover {
+    background-color: rgb(254, 253, 253);
 }

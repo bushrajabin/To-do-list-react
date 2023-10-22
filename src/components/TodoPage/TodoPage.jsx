@@ -1,43 +1,88 @@
+import { useEffect, useState } from "react";
 import "./TodoPage.css";
 
-function TodoPage() {
+function TodoPage({setIsOpen}) {
+
+    const [title, setTitle] = useState('')
+    const [status_, setStatus_] = useState('')
+
+    function randomId() {
+        let id = '';
+        for (let i = 0; i < 6; i++) {
+            id += Math.floor(Math.random() * 10);
+        }
+        return id;
+    }
+
 
     ///added task...
-    function taskAdded() {
-        alert("Task added successfully!!");
+    function onAddTask() {
+
+        
+
+        if (title == '' || status_ == '') {
+            alert("PLease fill both")
+        }else{
+            alert("Item aded successfully")
+            setIsOpen(false)
+        }
+        const todos = [];
+
+        const todo = {
+            title: title, status_: status_, id: randomId()
+        }
+
+
+        if (JSON.parse(localStorage.getItem('todos'))) {
+            const pereviosTodos = JSON.parse(localStorage.getItem('todos'))
+            pereviosTodos.push(todo)
+            localStorage.setItem("todos", JSON.stringify(pereviosTodos))
+
+        } else {
+            todos.push(todo);
+            localStorage.setItem("todos", JSON.stringify(todos))
+        
+
+        }
+
+
     }
 
     //cancel for task....
 
-    function cancelTask() {
-        document.getElementById("list").style.display = "none"
+    function oncancel() {
+        setIsOpen(false)
     }
-
 
     // Click for close...
-    function clickForClose(){
-        document.getElementById("list").style.display="none"
+    function onClose() {
+        setIsOpen(false)
     }
     return (
-        <div className="todoList" id="list">
+      <div className="container">
+          <div className="todoList" id="list">
             <h1>Add TODO</h1>
             <label htmlFor="">Title</label>
-            <input type="text" placeholder="" className="title" />
+            <input type="text" placeholder="" className="title" value={title} onChange={(e) => setTitle(e.target.value)} />
             <label htmlFor="">Status</label>
-            <select name="list" className="list">
-                <option value="incomplete">Incomplete</option>
+            <select name="status" className="list" value={status_} onChange={(e) => setStatus_(e.target.value)}>
+                <option >Choose Status</option>
+                <option value="incomplete" >Incomplete</option>
                 <option value="complete">Completed</option>
             </select>
 
             <div className="button3">
-                <button className="left_button" onClick={taskAdded}>Add Task</button>
-                <button className="right" onClick={cancelTask}>cancel</button>
+                <button className={`${title =='' || status_ =='' ? `active_left_button` :`left_button`}`} onClick={onAddTask} >Add Task</button>
+          
+
+                <button className="right" onClick={oncancel}>Cancel</button>
             </div>
 
-            <div className="close" onClick={clickForClose}>
+            <div className="close" onClick={onClose} >
                 <h3>X</h3>
             </div>
         </div>
+      </div>
     )
 }
 

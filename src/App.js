@@ -4,12 +4,14 @@ import AppContent from "./components/Content/AppContent";
 import AppHeader from "./components/Header/AppHeader";
 import TodoPage from "./components/TodoPage/TodoPage";
 import React from "react";
+import Home from "./pages/Home";
 function App() {
   return (
     <React.Fragment>
-         <AppHeader />
+      <Home />
+         {/* <AppHeader />
       <AppContent />
-      <TodoPage/>
+      <TodoPage/> */}
     </React.Fragment>
   );
 }

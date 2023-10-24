@@ -26,7 +26,6 @@
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
-
 }
 
 .button2>select{
@@ -36,5 +35,4 @@
     border-radius: 10px;
     padding: 14px;
     outline: none;
-
 }

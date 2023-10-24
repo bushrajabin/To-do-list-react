@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./AppContent.css"
-import TodoListPage from "../TodoListPage/TodoListPage";
+import TodoListPage from "../TodoListPage/ViewPage";
 function AppContent({ setIsOpen, }) {
 
 
@@ -46,7 +46,7 @@ function AppContent({ setIsOpen, }) {
         <>
             <div className="content">
                 {
-                    todos?.length > 0 ? <h2> totals Todos are- {todos.length}</h2> : <h2>no todos </h2>
+                    todos?.length > 0 ? <h2> totals Todos are- {todos.length}</h2> : <h2>No Todos </h2>
                 }
             </div>
 
@@ -68,7 +68,6 @@ function AppContent({ setIsOpen, }) {
                                         <h3>Id :{id}</h3>
 
                                     </div>
-                                    xxxx
                                     <div className="todoCardButton">
                                         <button onClick={() => showTodoList(data)}>View</button>
                                         <button onClick={clickForShowTodo}><i class="fa-solid fa-pen"></i></button>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./TodoPage.css";
 
-function TodoPage({setIsOpen}) {
+function TodoPage({ setIsOpen }) {
 
     const [title, setTitle] = useState('')
     const [status_, setStatus_] = useState('')
@@ -18,11 +18,11 @@ function TodoPage({setIsOpen}) {
     ///added task...
     function onAddTask() {
 
-        
+
 
         if (title == '' || status_ == '') {
             alert("PLease fill both")
-        }else{
+        } else {
             alert("Item aded successfully")
             setIsOpen(false)
         }
@@ -41,7 +41,7 @@ function TodoPage({setIsOpen}) {
         } else {
             todos.push(todo);
             localStorage.setItem("todos", JSON.stringify(todos))
-        
+
 
         }
 
@@ -59,30 +59,30 @@ function TodoPage({setIsOpen}) {
         setIsOpen(false)
     }
     return (
-      <div className="container">
-          <div className="todoList" id="list">
-            <h1>Add TODO</h1>
-            <label htmlFor="">Title</label>
-            <input type="text" placeholder="" className="title" value={title} onChange={(e) => setTitle(e.target.value)} />
-            <label htmlFor="">Status</label>
-            <select name="status" className="list" value={status_} onChange={(e) => setStatus_(e.target.value)}>
-                <option >Choose Status</option>
-                <option value="incomplete" >Incomplete</option>
-                <option value="complete">Completed</option>
-            </select>
+        <div className="container">
+            <div className="todoList" id="list">
+                <h1>Add TODO</h1>
+                <label htmlFor="">Title</label>
+                <input type="text" placeholder="" className="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <label htmlFor="">Status</label>
+                <select name="status" className="list" value={status_} onChange={(e) => setStatus_(e.target.value)}>
+                    <option >Choose Status</option>
+                    <option value="incomplete" >Incomplete</option>
+                    <option value="complete">Completed</option>
+                </select>
 
-            <div className="button3">
-                <button className={`${title =='' || status_ =='' ? `active_left_button` :`left_button`}`} onClick={onAddTask} >Add Task</button>
-          
+                <div className="button3">
+                    <button className={`${title == '' || status_ == '' ? `active_left_button` : `left_button`}`} onClick={onAddTask} >Add Task</button>
 
-                <button className="right" onClick={oncancel}>Cancel</button>
-            </div>
 
-            <div className="close" onClick={onClose} >
-                <h3>X</h3>
+                    <button className="right" onClick={oncancel}>Cancel</button>
+                </div>
+
+                <div className="close" onClick={onClose} >
+                    <h3>X</h3>
+                </div>
             </div>
         </div>
-      </div>
     )
 }
 

@@ -20,7 +20,8 @@
     justify-content: center;
     margin: auto;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 15%;
+
 }
 
 label {
@@ -54,7 +55,7 @@ input {
 
 .button3 {
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 
@@ -86,7 +87,7 @@ input {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 0px;
+    top: 25%;
     left: 64%;
     font-size: 15px;
     width: 40px;
@@ -99,4 +100,16 @@ input {
 
 .close:hover {
     background-color: rgb(254, 253, 253);
+}
+
+
+/* Media query */
+
+@media only screen and (min-width: 300px) {
+   .todoList{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+   } 
 }

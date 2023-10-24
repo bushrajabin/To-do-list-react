@@ -5,8 +5,6 @@ function AppHeader({setIsOpen}) {
     //function for show todo list
     function onOpenModal() {
         setIsOpen(true)
-        // document.getElementById("list").style.display = "flex";
-        // document.getElementById("app").style.opacity = "-1"
     }
     return (
         <>

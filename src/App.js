@@ -5,13 +5,11 @@ import AppHeader from "./components/Header/AppHeader";
 import TodoPage from "./components/TodoPage/TodoPage";
 import React from "react";
 import Home from "./pages/Home";
+import TodoListPage from "./components/TodoListPage/TodoListPage";
 function App() {
   return (
     <React.Fragment>
       <Home />
-         {/* <AppHeader />
-      <AppContent />
-      <TodoPage/> */}
     </React.Fragment>
   );
 }

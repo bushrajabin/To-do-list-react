@@ -25,17 +25,19 @@
 /* ////  for todo card only== */
 
 .mainCardContainer {
-    background-color: rgb(239, 243, 245);
+    margin-top: 30px;
+    background-color: rgb(6, 57, 83);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin: auto;
     align-items: center;
-    width: 50%;
-    border-radius: 10px;
+    width: 40%;
+    /* border-radius: 10px; */
+    overflow: scroll;
+    height: 60vh;
     
-    /* padding: 10px; */
 }
 
 .todoCard {
@@ -53,7 +55,10 @@
     margin: 10px;
     font-size: 8px;
     border-radius: 4px;
+height: 70px;
+    
 }
+
 
 .todoCardname{
     text-align: left;

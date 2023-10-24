@@ -4,23 +4,21 @@ import AppHeader from "../components/Header/AppHeader";
 import AppContent from "../components/Content/AppContent";
 import TodoPage from "../components/TodoPage/TodoPage";
 import App from "../App";
+import TodoListPage from "../components/TodoListPage/TodoListPage";
+
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const[isDelete,setIsDelete]=useState(false)
-
-
-
     return (
         <>
 
             <AppHeader setIsOpen={setIsOpen} />
-            <AppContent setIsDelete={setIsDelete} />
-
+            <AppContent setIsOpen={setIsOpen} />
             {
                 isOpen && <TodoPage setIsOpen={setIsOpen} />
 
             }
+
 
         </>
     );

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./AppContent.css"
-function AppContent({ setIsDelete }) {
+import TodoListPage from "../TodoListPage/TodoListPage";
+function AppContent({ setIsOpen, }) {
 
 
 
     const [todos, setTodos] = useState([]);
-    // const [todoData, setTodoData] = useState(false)
+    const [isTodoOpen, setIsTodoOpen] = useState(false)
+    const [currentTodo, setCurrentTodo] = useState({})
 
 
     // retrieving todoes from localStorage---
@@ -19,14 +21,26 @@ function AppContent({ setIsDelete }) {
 
     useEffect(() => {
         getTodos()
-    }, [todos])
+    }, [])
 
 
 
-    function TrashItem() {
-        alert("deletr ")
-        setIsDelete(false)
-        // todoData()
+    function deleteTodo(id) {
+        alert(`you clicked on this specific id :${id}`,)
+
+    }
+    function clickForShowTodo() {
+        setIsOpen(true)
+    }
+
+
+    function showTodoList(data) {
+        setIsTodoOpen(true)
+        console.log('data', data)
+
+        if (data) {
+            setCurrentTodo(data)
+        }
     }
     return (
         <>
@@ -36,21 +50,29 @@ function AppContent({ setIsDelete }) {
                 }
             </div>
 
+            {
+                isTodoOpen && <TodoListPage setIsTodoOpen={setIsTodoOpen} currentTodo={currentTodo} />
+            }
+
             <div className="mainCardContainer">
                 {
                     todos?.map((data, i, arr) => {
+                        const { id, status_, title } = data;
+
                         return (
                             <>
                                 <div className="todoCard">
                                     <div className="todoCardname">
-                                        <h3>Title :{data.title}</h3>
-                                        <h3>Status :{data.status_}</h3>
-                                    </div>
+                                        <h3>Title :{title}</h3>
+                                        <h3>Status :{status_}</h3>
+                                        <h3>Id :{id}</h3>
 
+                                    </div>
+                                    xxxx
                                     <div className="todoCardButton">
-                                        <button>View</button>
-                                        <button><i class="fa-solid fa-pen"></i></button>
-                                        <button onClick={TrashItem}><i className="fas fa-trash 2x"></i></button>
+                                        <button onClick={() => showTodoList(data)}>View</button>
+                                        <button onClick={clickForShowTodo}><i class="fa-solid fa-pen"></i></button>
+                                        <button onClick={() => deleteTodo(id)}><i className="fas fa-trash 2x"></i></button>
                                     </div>
 
 

@@ -14,7 +14,6 @@ function AppContent({ setIsOpen, }) {
     function getTodos() {
         const todoData = JSON.parse(localStorage.getItem("todos"));
         setTodos(todoData);
-
     }
 
     useEffect(() => {
@@ -27,7 +26,6 @@ function AppContent({ setIsOpen, }) {
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos))
     }
-
 
     function clickForShowTodo() {
         setIsOpen(true)
@@ -42,6 +40,8 @@ function AppContent({ setIsOpen, }) {
             setCurrentTodo(data)
         }
     }
+
+    
     return (
         <>
             <div className="content">
@@ -54,7 +54,7 @@ function AppContent({ setIsOpen, }) {
                 isTodoOpen && <TodoListPage setIsTodoOpen={setIsTodoOpen} currentTodo={currentTodo} />
             }
 
-            <div className="mainCardContainer">
+            <div className="mainCardContainer"> 
                 {
                     todos?.map((data, i, arr) => {
                         const { id, status_, title } = data;

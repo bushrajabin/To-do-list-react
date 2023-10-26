@@ -17,33 +17,27 @@ function TodoPage({ setIsOpen }) {
 
     ///added task...
     function onAddTask() {
-
-
-
-        if (title == '' || status_ == '') {
-            alert("PLease fill both")
-        } else {
-            alert("Item aded successfully")
-            setIsOpen(false)
-        }
         const todos = [];
-
         const todo = {
             title: title, status_: status_, id: randomId()
         }
-
-
-        if (JSON.parse(localStorage.getItem('todos'))) {
-            const pereviosTodos = JSON.parse(localStorage.getItem('todos'))
-            pereviosTodos.push(todo)
-            localStorage.setItem("todos", JSON.stringify(pereviosTodos))
+        if (title == "" || status_ == "") {
+            alert("Please fill both!!")
 
         } else {
-            todos.push(todo);
-            localStorage.setItem("todos", JSON.stringify(todos))
+            if (JSON.parse(localStorage.getItem('todos'))) {
+                const pereviosTodos = JSON.parse(localStorage.getItem('todos'))
+                pereviosTodos.push(todo)
+                localStorage.setItem("todos", JSON.stringify(pereviosTodos))
 
+            } else {
+                todos.push(todo);
+                localStorage.setItem("todos", JSON.stringify(todos))
+                setIsOpen(false)
 
+            }
         }
+
 
 
     }
@@ -56,7 +50,13 @@ function TodoPage({ setIsOpen }) {
 
     // Click for close...
     function onClose() {
+        // if (title == '' || status_ == '') {
+        //     prompt("sure want to close")
+        // } else {
+        //     // alert("Item aded successfully")
         setIsOpen(false)
+        // }
+
     }
     return (
         <div className="container">
@@ -72,9 +72,7 @@ function TodoPage({ setIsOpen }) {
                 </select>
 
                 <div className="button3">
-                    <button className={`${title == '' || status_ == '' ? `active_left_button` : `left_button`}`} onClick={onAddTask} >Add Task</button>
-
-
+                    <button className={`${title == "" || status_ == "" ? `active_left_button` : `left_button`}`} onClick={onAddTask} >Add Task</button>
                     <button className="right" onClick={oncancel}>Cancel</button>
                 </div>
 

@@ -5,8 +5,6 @@ import "./AppContent.css"
 import TodoListPage from "../TodoListPage/ViewPage";
 function AppContent({ setIsOpen, }) {
 
-
-
     const [todos, setTodos] = useState([]);
     const [isTodoOpen, setIsTodoOpen] = useState(false)
     const [currentTodo, setCurrentTodo] = useState({})
@@ -23,12 +21,14 @@ function AppContent({ setIsOpen, }) {
         getTodos()
     }, [])
 
-
-
-    function deleteTodo(id) {
-        alert(`you clicked on this specific id :${id}`,)
-
+    function onRemove(id) {
+        // alert(`you clicked on this specific id :${id}`,)
+        const newTodos = todos.filter((data) => data.id !== id);
+        setTodos(newTodos);
+        localStorage.setItem('todos', JSON.stringify(newTodos))
     }
+
+
     function clickForShowTodo() {
         setIsOpen(true)
     }
@@ -71,7 +71,7 @@ function AppContent({ setIsOpen, }) {
                                     <div className="todoCardButton">
                                         <button onClick={() => showTodoList(data)}>View</button>
                                         <button onClick={clickForShowTodo}><i class="fa-solid fa-pen"></i></button>
-                                        <button onClick={() => deleteTodo(id)}><i className="fas fa-trash 2x"></i></button>
+                                        <button onClick={() => onRemove(id)}><i className="fas fa-trash 2x"></i></button>
                                     </div>
 
 

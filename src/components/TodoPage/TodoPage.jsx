@@ -17,6 +17,7 @@ function TodoPage({ setIsOpen }) {
 
     ///added task...
     function onAddTask() {
+        // console.log(setIsDiv)
         const todos = [];
         const todo = {
             title: title, status_: status_, id: randomId()
@@ -29,17 +30,14 @@ function TodoPage({ setIsOpen }) {
                 const pereviosTodos = JSON.parse(localStorage.getItem('todos'))
                 pereviosTodos.push(todo)
                 localStorage.setItem("todos", JSON.stringify(pereviosTodos))
+                setIsOpen(false)
 
             } else {
                 todos.push(todo);
                 localStorage.setItem("todos", JSON.stringify(todos))
-                setIsOpen(false)
 
             }
         }
-
-
-
     }
 
     //cancel for task....
@@ -50,13 +48,7 @@ function TodoPage({ setIsOpen }) {
 
     // Click for close...
     function onClose() {
-        // if (title == '' || status_ == '') {
-        //     prompt("sure want to close")
-        // } else {
-        //     // alert("Item aded successfully")
         setIsOpen(false)
-        // }
-
     }
     return (
         <div className="container">

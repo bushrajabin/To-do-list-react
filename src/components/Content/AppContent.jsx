@@ -3,12 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./AppContent.css"
 import TodoListPage from "../TodoListPage/ViewPage";
-function AppContent({ setIsOpen, }) {
+function AppContent({ setIsOpen }) {
 
     const [todos, setTodos] = useState([]);
     const [isTodoOpen, setIsTodoOpen] = useState(false)
     const [currentTodo, setCurrentTodo] = useState({})
-
 
     // retrieving todoes from localStorage---
     function getTodos() {
@@ -41,7 +40,7 @@ function AppContent({ setIsOpen, }) {
         }
     }
 
-    
+
     return (
         <>
             <div className="content">
@@ -54,37 +53,38 @@ function AppContent({ setIsOpen, }) {
                 isTodoOpen && <TodoListPage setIsTodoOpen={setIsTodoOpen} currentTodo={currentTodo} />
             }
 
-            <div className="mainCardContainer"> 
-                {
-                    todos?.map((data, i, arr) => {
-                        const { id, status_, title } = data;
 
-                        return (
-                            <>
-                                <div className="todoCard">
-                                    <div className="todoCardname">
-                                        <h3>Title :{title}</h3>
-                                        <h3>Status :{status_}</h3>
-                                        <h3>Id :{id}</h3>
+
+
+            {
+                todos.length > 0 && <div className="mainCardContainer">
+                    {
+                        todos?.map((data, i, arr) => {
+                            const { id, status_, title } = data;
+
+                            return (
+                                <>
+                                    <div className="todoCard">
+                                        <div className="todoCardname">
+                                            <h3>Title :{title}</h3>
+                                            <h3>Status :{status_}</h3>
+                                            <h3>Id :{id}</h3>
+
+                                        </div>
+                                        <div className="todoCardButton">
+                                            <button onClick={() => showTodoList(data)}>View</button>
+                                            <button onClick={clickForShowTodo}><i class="fa-solid fa-pen"></i></button>
+                                            <button onClick={() => onRemove(id)}><i className="fas fa-trash 2x"></i></button>
+                                        </div>
+
 
                                     </div>
-                                    <div className="todoCardButton">
-                                        <button onClick={() => showTodoList(data)}>View</button>
-                                        <button onClick={clickForShowTodo}><i class="fa-solid fa-pen"></i></button>
-                                        <button onClick={() => onRemove(id)}><i className="fas fa-trash 2x"></i></button>
-                                    </div>
-
-
-                                </div>
-                            </>
-                        )
-                    })
-                }
-
-
-            </div>
-
-
+                                </>
+                            )
+                        })
+                    }
+                </div>
+            }
 
         </>
 

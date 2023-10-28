@@ -16,10 +16,10 @@ function TodoPage({ setIsOpen }) {
 
 
     ///added task...
-    function onAddTask() {
+     function onAddTask() {
         // console.log(setIsDiv)
         const todos = [];
-        const todo = {
+        const todo =  {
             title: title, status_: status_, id: randomId()
         }
         if (title == "" || status_ == "") {

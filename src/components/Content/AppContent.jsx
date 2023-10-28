@@ -17,7 +17,7 @@ function AppContent({ setIsOpen }) {
 
     useEffect(() => {
         getTodos()
-    }, [])
+    }, [todos])
 
     function onRemove(id) {
         // alert(`you clicked on this specific id :${id}`,)
@@ -57,7 +57,7 @@ function AppContent({ setIsOpen }) {
 
 
             {
-                todos.length > 0 && <div className="mainCardContainer">
+                todos?.length > 0 && <div className="mainCardContainer">
                     {
                         todos?.map((data, i, arr) => {
                             const { id, status_, title } = data;

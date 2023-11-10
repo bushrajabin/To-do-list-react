@@ -36,3 +36,9 @@
     padding: 14px;
     outline: none;
 }
+/* Added media query-- */
+@media (max-width:500px) {
+    .appheader{
+        font-size: 15px;
+    }
+}

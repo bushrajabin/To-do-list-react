@@ -16,7 +16,8 @@ const AppContent = ({ setIsOpen }) => {
     }
 
     useEffect(() => {
-        getTodos()
+
+        // getTodos()
     }, [todos])
 
     const onRemove = (id) => {

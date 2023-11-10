@@ -76,3 +76,23 @@
     border-radius: 5px;
 
 }
+
+@media (max-width:500px) {
+    .content{
+        width: auto;
+        font-size: 15px;
+        margin: 10px;
+    }
+
+    .mainCardContainer{
+        width: 100vw;
+        height: auto;
+
+    }
+}
+
+
+
+
+
+

@@ -13,9 +13,7 @@ const TodoPage = ({ setIsOpen }) => {
         }
         return id;
     }
-
-
-    ///added task...
+///added task...
     const onAddTask = () => {
         // console.log(setIsDiv)
         const todos = [];

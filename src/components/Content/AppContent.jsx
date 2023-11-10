@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./AppContent.css"
 import TodoListPage from "../TodoListPage/ViewPage";
-const AppContent = ({ setIsOpen }) => {
+const AppContent = ({ setIsOpen,isOpen }) => {
 
     const [todos, setTodos] = useState([]);
     const [isTodoOpen, setIsTodoOpen] = useState(false)
@@ -13,12 +13,12 @@ const AppContent = ({ setIsOpen }) => {
     const getTodos = () => {
         const todoData = JSON.parse(localStorage.getItem("todos"));
         setTodos(todoData);
+        // isOpen(false)   
     }
 
     useEffect(() => {
-
         getTodos()
-    }, [setTodos])
+    }, [isOpen])
 
     const onRemove = (id) => {
         // alert(`you clicked on this specific id :${id}`,)

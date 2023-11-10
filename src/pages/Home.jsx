@@ -13,7 +13,7 @@ const Home = () => {
         <>
 
             <AppHeader setIsOpen={setIsOpen} />
-            <AppContent setIsOpen={setIsOpen} />
+            <AppContent setIsOpen={setIsOpen} isOpen={isOpen} />
             {
                 isOpen && <TodoPage setIsOpen={setIsOpen} />
 

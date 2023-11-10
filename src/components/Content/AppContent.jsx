@@ -17,8 +17,8 @@ const AppContent = ({ setIsOpen }) => {
 
     useEffect(() => {
 
-        // getTodos()
-    }, [todos])
+        getTodos()
+    }, [setTodos])
 
     const onRemove = (id) => {
         // alert(`you clicked on this specific id :${id}`,)

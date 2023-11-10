@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import "./AppContent.css"
 import TodoListPage from "../TodoListPage/ViewPage";
-function AppContent({ setIsOpen }) {
+const AppContent = ({ setIsOpen }) => {
 
     const [todos, setTodos] = useState([]);
     const [isTodoOpen, setIsTodoOpen] = useState(false)
     const [currentTodo, setCurrentTodo] = useState({})
 
     // retrieving todoes from localStorage---
-    function getTodos() {
+    const getTodos = () => {
         const todoData = JSON.parse(localStorage.getItem("todos"));
         setTodos(todoData);
     }
@@ -19,19 +19,19 @@ function AppContent({ setIsOpen }) {
         getTodos()
     }, [todos])
 
-    function onRemove(id) {
+    const onRemove = (id) => {
         // alert(`you clicked on this specific id :${id}`,)
         const newTodos = todos.filter((data) => data.id !== id);
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos))
     }
 
-    function clickForShowTodo() {
+    const clickForEdit = () => {
         setIsOpen(true)
     }
 
 
-    function showTodoList(data) {
+    const showTodoList = (data) => {
         setIsTodoOpen(true)
         console.log('data', data)
 
@@ -52,11 +52,7 @@ function AppContent({ setIsOpen }) {
             {
                 isTodoOpen && <TodoListPage setIsTodoOpen={setIsTodoOpen} currentTodo={currentTodo} />
             }
-
-
-
-
-            {
+ {
                 todos?.length > 0 && <div className="mainCardContainer">
                     {
                         todos?.map((data, i, arr) => {
@@ -73,7 +69,7 @@ function AppContent({ setIsOpen }) {
                                         </div>
                                         <div className="todoCardButton">
                                             <button onClick={() => showTodoList(data)}>View</button>
-                                            <button onClick={clickForShowTodo}><i class="fa-solid fa-pen"></i></button>
+                                            <button onClick={clickForEdit}><i class="fa-solid fa-pen"></i></button>
                                             <button onClick={() => onRemove(id)}><i className="fas fa-trash 2x"></i></button>
                                         </div>
 
@@ -87,7 +83,6 @@ function AppContent({ setIsOpen }) {
             }
 
         </>
-
 
     );
 }

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./AppHeader.css"
-function AppHeader({setIsOpen}) {
+const AppHeader=({setIsOpen})=> {
 
     //function for show todo list
-    function onOpenModal() {
+    const onOpenModal=() =>{
         setIsOpen(true)
     }
     return (

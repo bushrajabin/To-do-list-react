@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./TodoPage.css";
 
-function TodoPage({ setIsOpen }) {
+const TodoPage = ({ setIsOpen }) => {
 
     const [title, setTitle] = useState('')
     const [status_, setStatus_] = useState('')
 
-    function randomId() {
+    const randomId = () => {
         let id = '';
         for (let i = 0; i < 6; i++) {
             id += Math.floor(Math.random() * 10);
@@ -16,10 +16,10 @@ function TodoPage({ setIsOpen }) {
 
 
     ///added task...
-     function onAddTask() {
+    const onAddTask = () => {
         // console.log(setIsDiv)
         const todos = [];
-        const todo =  {
+        const todo = {
             title: title, status_: status_, id: randomId()
         }
         if (title == "" || status_ == "") {
@@ -42,12 +42,12 @@ function TodoPage({ setIsOpen }) {
 
     //cancel for task....
 
-    function oncancel() {
+    const oncancel = () => {
         setIsOpen(false)
     }
 
     // Click for close...
-    function onClose() {
+    const onClose = () => {
         setIsOpen(false)
     }
     return (

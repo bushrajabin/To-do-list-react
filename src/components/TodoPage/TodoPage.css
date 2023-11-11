@@ -141,3 +141,19 @@ input {
         font-size: 20px;
     }
 }
+
+
+@media (min-width: 700px) and (max-width: 1200px) {
+    .todoList {
+
+        width: 90vw;
+        height: 50vh;
+        padding-left: 60px;
+        margin: 20px;
+    }
+
+    .close>button {
+        margin-left: 25%;
+        font-size: 40px;
+    }
+}

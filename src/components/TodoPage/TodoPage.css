@@ -1,8 +1,8 @@
-.container{
+.container {
     width: 100vw;
     height: 100vh;
     background-color: transparent;
-    position:  absolute;
+    position: absolute;
     top: 0px;
     right: 0px;
     display: flex;
@@ -11,6 +11,7 @@
     align-items: center;
     backdrop-filter: blur(2px);
 }
+
 .todoList {
     background-color: aliceblue;
     width: 30%;
@@ -83,10 +84,8 @@ input {
     background-color: rgb(208, 207, 207);
 }
 
-.close {
+.close>button {
     position: absolute;
-    display: flex;
-    flex-direction: column;
     top: 25%;
     left: 64%;
     font-size: 15px;
@@ -96,9 +95,11 @@ input {
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
+    border: none;
 }
 
-.close:hover {
+
+.close>button:hover {
     background-color: rgb(254, 253, 253);
 }
 
@@ -106,21 +107,37 @@ input {
 /* Media query */
 
 @media (max-width:500px) {
-    .todoList{
-        background-color: yellow;
-        width: 100vw;
+    .todoList {
 
- margin: 10px;
-   }
-   .button3{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-   }
-.close{
-    text-align: end;
-    font-size: 20px;
+        width: 100vw;
+        margin: 10px;
+    }
+
+    .button3 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .close>button {
+        position: absolutes;
+        left: 0px;
+        font-size: 20px;
+    }
+
 }
 
+
+@media (min-width: 500px) and (max-width: 550px) {
+    .todoList {
+        padding-left: 20px;
+        width: 90vw;
+        margin: 10px;
+    }
+
+    .close>button {
+        margin-left: 22%;
+        font-size: 20px;
+    }
 }

@@ -78,21 +78,50 @@
 }
 
 @media (max-width:500px) {
-    .content{
+    .content {
         width: auto;
         font-size: 15px;
         margin: 10px;
+
     }
 
-    .mainCardContainer{
+    .mainCardContainer {
+
         width: 100vw;
-        height: auto;
+        /* height: auto; */
+        padding: 10px;
+
+        overflow: scroll;
+
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 550px) {
+    .content {
+        padding: 0px;
+        width: 80vw;
+    }
+
+    .mainCardContainer {
+        overflow: scroll;
+        padding-top: 100px;
+        width: 96vw;
 
     }
 }
 
 
 
+@media (min-width: 700px) and (max-width: 1200px) {
+    .content {
+        width: 90vw;
 
+    }
 
-
+    .mainCardContainer {
+        width: 90vw;
+        padding: 20px;
+        overflow: scroll;
+    }
+}

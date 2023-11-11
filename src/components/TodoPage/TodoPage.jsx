@@ -67,7 +67,7 @@ const TodoPage = ({ setIsOpen }) => {
                 </div>
 
                 <div className="close" onClick={onClose} >
-                    <h3>X</h3>
+                    <button>X</button>
                 </div>
             </div>
         </div>

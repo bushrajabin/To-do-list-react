@@ -1,8 +1,8 @@
-.mainParent{
+.mainParent {
     width: 100vw;
     height: 100vh;
     background-color: transparent;
-    position:  absolute;
+    position: absolute;
     top: 0px;
     /* right: 0px; */
     display: flex;
@@ -11,7 +11,8 @@
     align-items: center;
     backdrop-filter: blur(2px);
 }
-.mainDiv{
+
+.mainDiv {
     background-color: rgb(248, 243, 243);
     display: flex;
     flex-direction: column;
@@ -28,18 +29,19 @@
 }
 
 
-.mainDiv>h1{
+.mainDiv>h1 {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.mainDiv>h2{
+.mainDiv>h2 {
     font-size: 20px;
     padding-left: 30px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     letter-spacing: 2px;
 }
-.mainDiv>button{
+
+.mainDiv>button {
     border: none;
     width: 20px;
     position: absolute;
@@ -49,18 +51,43 @@
     border-radius: 5px;
 }
 
-.mainDiv>button:hover{
-background-color: lightblue;
+.mainDiv>button:hover {
+    background-color: lightblue;
 }
 
 
 @media (max-width:500px) {
-.mainDiv{
-     
-        background-color: yellow;
-        width: 100vw;
-        /* margin: 10px; */
-        /* justify-content: center; */
+    .mainDiv {
+        width: 90vw;
+        margin: 10px;
         top: 19%;
+    }
+
+    .mainDiv>button {
+        width: auto;
+        font-size: 30px;
+        position: absolute;
+        margin-top: 0px;
+        left: 0px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 600px){
+    .mainDiv{
+        width: 90vw;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1200px){
+    .mainDiv{
+        width: 80vw;
+        margin: 10px;
+        padding-left: 80px;
+        padding: 30px;
+        overflow: hidden;
+    }
+
+    .mainDiv>button{
+        font-size: 30px;
     }
 }

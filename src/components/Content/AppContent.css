@@ -86,11 +86,8 @@
     }
 
     .mainCardContainer {
-
         width: 100vw;
-        /* height: auto; */
         padding: 10px;
-
         overflow: scroll;
 
     }
